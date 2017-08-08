@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    The Survey
+{% endblock %}
+
+{% block content %}
+
+	{% formfield player.age %}
+	{% formfield player.gender %}
+	{% formfield player.likes_experiment %}
+	{% formfield player.field_of_studies %}
+	{% formfield player.height %}
+	{% formfield player.weight %}
+
+    {% next_button %}
+
+{% endblock %}

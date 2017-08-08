@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Page title
+{% endblock %}
+
+{% block content %}
+the win or not {{ player.the_probability }} <br>
+the amount of bet {{ player.the_bet }} <br>
+the amount of result {{ player.the_result }}
+    {% next_button %}
+
+
+{% endblock %}
+
+

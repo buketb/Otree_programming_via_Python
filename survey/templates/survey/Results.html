@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block content %}
+	Your bmi is: {{ player.BMI }} <br/>
+	You are {{ player.BMI_class}}
+
+    {% next_button %}
+{% endblock %}
+
+
