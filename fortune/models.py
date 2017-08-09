@@ -33,12 +33,16 @@ class Player(BasePlayer):
         doc = "the data about amount of bet"
         )
 
-    the_probability = models.FloatField(
+    the_probability = models.PositiveIntegerField(
+        max=1, min=0,
         verbose_name = "What is the probability of winning",
         doc = "chance of win",
         )
 
-    the_result = models.CurrencyField()
+    the_result = models.FloatField(
+        verbose_name="How much will you have?",
+        doc = "the data about amount of rest of money"
+        )
 
     def calculate_the_probability(self):
         self.the_probability = random.randint(0,1)
