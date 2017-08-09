@@ -139,6 +139,13 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'app_sequence': ['ultimatom_game'],
         'participation_fee': 3.00,
+    },
+     {
+        'name': 'Treatment_demo',
+        'display_name': 'the Treatment Demo',
+        'num_demo_participants': 1,
+        'app_sequence': ['Treatment_demo'],
+        'participation_fee': 3.00,
     }
 
 
