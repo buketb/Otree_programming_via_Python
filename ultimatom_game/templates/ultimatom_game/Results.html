@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    The Result
+{% endblock %}
+
+{% block content %}
+The proposed share {{ group.proposed_share }} <br>
+The choice {{ group.accepted }} <br>
+
+your payoff: {{ player.payoff }}
+
+
+    {% next_button %}
+{% endblock %}
+
+

@@ -132,7 +132,15 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'app_sequence': ['prisoners_dilemma'],
         'participation_fee': 3.00,
+    },
+    {
+        'name': 'ultimatom_game',
+        'display_name': 'the ultimatom game',
+        'num_demo_participants': 2,
+        'app_sequence': ['ultimatom_game'],
+        'participation_fee': 3.00,
     }
+
 
 ]
 
