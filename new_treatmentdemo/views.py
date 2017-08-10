@@ -12,6 +12,7 @@ class MyPage(Page):
         self.player.calculate_the_probability()
         # self.player.determine_endowment()
         self.player.determine_result()
+        self.player.determine_the_totalendowment()
 
 class ResultsWaitPage(WaitPage):
 
@@ -28,3 +29,4 @@ page_sequence = [
     ResultsWaitPage,
     Results
 ]
+

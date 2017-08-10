@@ -2,14 +2,15 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    The Treatment Demo Results
+    The New Treatment Demo Results
 {% endblock %}
 
 {% block content %}
 the win or not {{ player.the_probability }} <br>
 the amount of bet {{ player.the_bet }} <br>
 the endowment {{ player.endowment }} <br>
-the amount of result {{ player.the_result }}
+the amount of result {{ player.the_result }} <br>
+the amount of total endowment {{ player.the_totalendowment }}
     {% next_button %}
 
 

@@ -57,7 +57,7 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
 REAL_WORLD_CURRENCY_CODE = 'EUR'
-#USE_POINTS = True
+USE_POINTS = False
 
 
 # e.g. en, de, fr, it, ja, zh-hans
@@ -140,11 +140,26 @@ SESSION_CONFIGS = [
         'app_sequence': ['ultimatom_game'],
         'participation_fee': 3.00,
     },
-     {
+    {
         'name': 'Treatment_demo',
         'display_name': 'the Treatment Demo',
         'num_demo_participants': 1,
         'app_sequence': ['Treatment_demo'],
+        'participation_fee': 3.00,
+    },
+    {
+        'name': 'new_treatmentdemo',
+        'display_name': 'new_treatmentdemo',
+        'num_demo_participants': 1,
+        'app_sequence': ['new_treatmentdemo'],
+        'participation_fee': 3.00,
+        'treatment': 'high',
+    },
+    {
+        'name': 'Quiz_Time',
+        'display_name': 'Quiz Time',
+        'num_demo_participants': 5,
+        'app_sequence': ['quiz_time'],
         'participation_fee': 3.00,
     }
 

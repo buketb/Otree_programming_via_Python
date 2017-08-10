@@ -2,14 +2,12 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    The Treatment Demo
+    Question {{ player.round_number }} of {{ Constants.num_rounds }}
 {% endblock %}
 
 {% block content %}
-{% formfield player.the_bet %}
-Your endowment is {{ player.endowment|c }}
 
-
+    {% formfield player.submitted_answer with label=player.question %}
 
     {% next_button %}
 
