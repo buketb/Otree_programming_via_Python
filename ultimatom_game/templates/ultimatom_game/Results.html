@@ -6,10 +6,10 @@
 {% endblock %}
 
 {% block content %}
-The proposed share {{ group.proposed_share }} <br>
-The choice {{ group.accepted }} <br>
+The proposed share {{ group.proposed_share |c }} <br>
+The choice of the proposal; It is accepted? {{ group.accepted }} <br>
 
-your payoff: {{ player.payoff }}
+Your payoff is {{ player.payoff }}
 
 
     {% next_button %}

@@ -2,16 +2,14 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-   
+    The Results
 {% endblock %}
 
 {% block content %}
-Welcome to the ultimatom game! <br>
-<br>
+the years in prison {{ player.years_in_prison }} <br>
+the decision {{ player.decision }} <br>
+the other's decision {{ player.others_decision }}
 
-In this game there are two different roles. <br>
-<br>
- Your role is {{ player.role }} in this game
 
     {% next_button %}
 {% endblock %}

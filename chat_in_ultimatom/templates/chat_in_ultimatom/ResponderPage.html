@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+{% load otreechat %}
+
+{% block title %}
+    The Chat in Ultimatom Game
+{% endblock %}
+
+{% block content %}
+{% formfield group.accepted %}
+
+{% chat %}
+
+<style>
+    .otree-chat .messages {
+        height: 400px;
+    }
+    .otree-chat .nickname {
+        color: #0000FF;
+        font-weight: bold;
+    }
+</style>
+
+
+    {% next_button %}
+
+{% endblock %}

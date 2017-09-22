@@ -2,16 +2,15 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-   
+    The Result
 {% endblock %}
 
 {% block content %}
-Welcome to the ultimatom game! <br>
-<br>
+The proposed share {{ group.proposed_share }} <br>
+The choice {{ group.accepted }} <br>
 
-In this game there are two different roles. <br>
-<br>
- Your role is {{ player.role }} in this game
+your payoff: {{ player.payoff }}
+
 
     {% next_button %}
 {% endblock %}

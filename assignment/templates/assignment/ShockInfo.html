@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Strategic Default Information
+{% endblock %}
+
+{% block content %}
+
+<p> Due to a financial crisis, house market prices have dropped to $140.000. In addition, a random draw determines (p = 0.3) whether a household is hit by a negative income shock (due to sudden unemployment). There are two outcomes: Either you could has an income of $200.000 (no shock) or earns nothing ($0, shock). If you earns nothing, they cannot repay their mortgage loan (default) and lose their home. If they are not hit by the shock, they can still decide to strategically default on the mortgage loan. In this case they lose the house but keep the income.</p>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Decision Tree</h2>
+<img src="{% static "assignment/tree.jpg" %}"/>
+
+</body>
+</html>
+
+<p>
+<p>
+<p>
+<p>
+
+
+Unfortunately, you are hit by the negative income shock!
+
+Default!
+
+
+
+
+    {% next_button %}
+
+{% endblock %}

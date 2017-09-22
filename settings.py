@@ -65,7 +65,7 @@ USE_POINTS = False
 LANGUAGE_CODE = 'en'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
-INSTALLED_APPS = ['otree']
+INSTALLED_APPS = ['otree', 'otreechat']
 
 # SENTRY_DSN = ''
 
@@ -133,13 +133,13 @@ SESSION_CONFIGS = [
         'app_sequence': ['prisoners_dilemma'],
         'participation_fee': 3.00,
     },
-    {
-        'name': 'ultimatom_game',
-        'display_name': 'the ultimatom game',
-        'num_demo_participants': 2,
-        'app_sequence': ['ultimatom_game'],
-        'participation_fee': 3.00,
-    },
+    # {
+    #     'name': 'ultimatom_game',
+    #     'display_name': 'the ultimatom game',
+    #     'num_demo_participants': 2,
+    #     'app_sequence': ['ultimatom_game'],
+    #     'participation_fee': 3.00,
+    # },
     {
         'name': 'Treatment_demo',
         'display_name': 'the Treatment Demo',
@@ -161,9 +161,50 @@ SESSION_CONFIGS = [
         'num_demo_participants': 5,
         'app_sequence': ['quiz_time'],
         'participation_fee': 3.00,
-    }
+    },
+    {
+        'name': 'chat',
+        'display_name': 'chat',
+        'num_demo_participants': 2,
+        'app_sequence': ['chat'],
+        'participation_fee': 3.00,
+    },
+    {
+        'name': 'chat_in_ultimatom',
+        'display_name': 'chat_in_ultimatom',
+        'num_demo_participants': 2,
+        'app_sequence': ['chat_in_ultimatom'],
+        'participation_fee': 3.00,
+    },
+    
+    {
+        'name': 'assignment_full_info',
+        'display_name': 'assignment_full_info',
+        'num_demo_participants': 8,
+        'app_sequence': ['assignment'],
+        'participation_fee': 3.00,
+        'treatment': 'full_info',
+    }, 
+
+    {
+        'name': 'assignment_part_info',
+        'display_name': 'assignment_part_info',
+        'num_demo_participants': 8,
+        'app_sequence': ['assignment'],
+        'participation_fee': 3.00,
+        'treatment': 'part_info',
+    },
 
 
+
+    {
+        'name': 'assignment_part_info_4p',
+        'display_name': 'assignment_part_info_4players',
+        'num_demo_participants': 4,
+        'app_sequence': ['assignment'],
+        'participation_fee': 3.00,
+        'treatment': 'part_info',
+    },
 ]
 
 # anything you put after the below line will override

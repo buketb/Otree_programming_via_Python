@@ -25,10 +25,10 @@ class Subsession(BaseSubsession):
 class Group(BaseGroup):
     proposed_share = models.PositiveIntegerField(
         max= Constants.pot_size,
-        verbose_name = "How much do you propose?",
+        verbose_name = "How much do you keep for yourself?"
         )
 
-    accepted = models.BooleanField(choices=[(True, "Yes"), (False, "No")])
+    accepted = models.BooleanField(choices=[(True, "yes"), (False, "No")])
 
     def set_payoffs(self):
         proposer = self.get_player_by_role('proposer')
@@ -48,5 +48,3 @@ class Player(BasePlayer):
             return 'proposer'
         else:
             return 'responder'
-
-    

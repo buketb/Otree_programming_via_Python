@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Strategic Default Demographics
+{% endblock %}
+
+{% block content %}
+Please, fill all the parts. <p>
+
+    {% formfield player.age with label="How old are you?" %}
+    {% formfield player.gender with label="What is your gender?" %}
+    {% formfield player.student_status with label="Are you a student?" %}
+    {% formfield player.field_of_studies with label="what do you study if at all?" %}
+    {% formfield player.risk_profile with label="Willingness to take risk with Likert Scale" %}
+    {% formfield player.nationality with label="Nationality?" %}
+
+<p>
+    {% next_button %}
+
+{% endblock %}

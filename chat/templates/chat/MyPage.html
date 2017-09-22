@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+{% load otreechat %}
+
+{% block title %}
+    Chat in the Prisoners Dilemma
+{% endblock %}
+
+{% block content %}
+{% formfield player.decision %}
+
+Talk to other guy: {% chat %}
+
+<style>
+    .otree-chat .messages {
+        height: 400px;
+    }
+    .otree-chat .nickname {
+        color: #0000FF;
+        font-weight: bold;
+    }
+</style>
+
+    {% next_button %}
+
+{% endblock %}
