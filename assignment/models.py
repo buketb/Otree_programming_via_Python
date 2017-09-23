@@ -14,7 +14,7 @@ Your app description
 
 class Constants(BaseConstants):
     name_in_url = 'assignment'
-    players_per_group = 4
+    players_per_group = 2
     num_rounds = 1
    
     
@@ -57,27 +57,29 @@ class Group(BaseGroup):
         self.decision_p2 = self.get_player_by_id(2).decision
         self.endowment_p2 = self.get_player_by_id(2).endowment
 
-        if Constants.players_per_group >= 4:
+        if Constants.players_per_group >= 3:
             self.decision_p3 = self.get_player_by_id(3).decision
             self.endowment_p3 = self.get_player_by_id(3).endowment
 
+        if Constants.players_per_group >= 4:
             self.decision_p4 = self.get_player_by_id(4).decision
             self.endowment_p4 = self.get_player_by_id(4).endowment
 
-        if Constants.players_per_group >= 6:
+        if Constants.players_per_group >= 5:
             self.decision_p5 = self.get_player_by_id(5).decision
             self.endowment_p5 = self.get_player_by_id(5).endowment
 
+        if Constants.players_per_group >= 6:
             self.decision_p6 = self.get_player_by_id(6).decision
             self.endowment_p6 = self.get_player_by_id(6).endowment
 
-        if Constants.players_per_group >= 8:
+        if Constants.players_per_group >= 7:
             self.decision_p7 = self.get_player_by_id(7).decision
             self.endowment_p7 = self.get_player_by_id(7).endowment
 
+        if Constants.players_per_group >= 8:
             self.decision_p8 = self.get_player_by_id(8).decision
             self.endowment_p8 = self.get_player_by_id(8).endowment
-
 
 
 
@@ -88,14 +90,10 @@ class Player(BasePlayer):
         doc= "The data of the choices"
         )
 
-                   
-
     defaulted = models.BooleanField(choices=[(True, "Yes"), (False, "No")],
         verbose_name='Defaulted or Repay the credit back?'
         )
 
-
-    
     the_probability= models.PositiveIntegerField(min=0,
         max=1,
         doc= 'What is the probability of shock?',
@@ -108,7 +106,7 @@ class Player(BasePlayer):
         self.the_probability = random.random()
 
     def set_endowment(self):
-        if self.the_probability >= Constants.shock_probability : # flip the unequal sign
+        if self.the_probability <= Constants.shock_probability : 
             self.endowment = c(0)
             self.decision = 'Default'
         else:
@@ -135,9 +133,9 @@ class Player(BasePlayer):
 
 
     field_of_studies = models.CharField(
-            blank=True,
             verbose_name="What do you study if at all?",
-            doc="free text input of field of studies",       
+            doc="free text input of field of studies",
+            blank=True      
         )
     
     

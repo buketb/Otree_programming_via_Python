@@ -2,14 +2,41 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Strategic Default Instructions
+
+<h1><em>Welcome To The Experiment!</em></h1>
+<p><h3><em>Please, follow the instructions carefully and be certain about understanding all the details.&nbsp;</em></h3></p>
+<hr />
+<p>&nbsp;</p>
+    <h2><em> Instructions </em></h2>
 {% endblock %}
 
 {% block content %}
 
-<p>Participants are randomized into groups. Each group forms a neighborhood of households. Each of the households bought his/her house for $200.000 with 100% mortgage financing. </p>
+<p>Participants will be randomized into groups of {{ Constants.players_per_group }}. Each group will form a neighborhood of households. Each of the households bought his/her house for $200.000 with 100% mortgage financing. </p>
+
+<p> Due to a financial crisis, house market prices have dropped to $140.000. In addition, a random draw will determine (p = 0.3) whether you will be hit by a negative income shock (due to sudden unemployment). There are two outcomes: You will have an income of $200.000 (no shock) or earn nothing ($0, shock). If you earn nothing, you cannot repay your mortgage loan (default) and lose your home. If you are not hit by the shock, you can still decide to strategically default on the mortgage loan. In this case you lose the house but keep the income.</p>
+
+<p><em> Please, have a look at the decision tree carefully.</em></p>
+
+<!DOCTYPE html>
+<html>
+<body>
 
 
+<img src="{% static "assignment/tree.jpg" %}"/>
+</body>
+</html>
+
+<p>
+<p>On the next page, you will see whether you are hit by the income shock. If you are not hit by the income shock, your choice section will appear on the next page again.In this case, you can choose repaying the credit or defaulting.</p>
+
+<p>On the third page, you will be able to see the informations from the other households and to chat with the households in your neighborhood(your group). But, it will be visible for only 120 seconds.</p>
+
+<p>On the forth page, you will the part of demographics. You should give the correct answers to all the questions.</p>
+
+<p><em> Please remeber that your answers will be kept in privacy as personal informations and only used for this scientific study.</em></p>
+
+<p><h3><em> Thank you for your attention.</em></h3></p>
     {% next_button %}
 
 {% endblock %}

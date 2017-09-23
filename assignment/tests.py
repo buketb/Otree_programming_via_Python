@@ -12,7 +12,7 @@ class PlayerBot(Bot):
         invalid_age_data = {
             "age": -1,
             "gender": "Male"
-            "student_status": "Yes",
+            "student_status": "True",
             "field_of_studíes": "Economics",
             "risk_profile": "Low",
             "nationality": "Germany"
@@ -74,17 +74,6 @@ class PlayerBot(Bot):
         }
 
         yield SubmissionMustFail(views.Demographics, invalid_status_data)
-
-        invalid_risk_profile_data = {
-            "age": 25,
-            "gender": "Male"
-            "student_status": "Yes",
-            "field_of_studies": "Economics",
-            "risk_profile": 3,
-            "nationality": "Turkey"
-        }
-
-        yield SubmissionMustFail(views.Demographics, invalid_risk_profile_data)
 
 
         valid_demograhics_data = {

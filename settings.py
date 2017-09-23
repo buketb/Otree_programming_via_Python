@@ -195,8 +195,6 @@ SESSION_CONFIGS = [
         'treatment': 'part_info',
     },
 
-
-
     {
         'name': 'assignment_part_info_4p',
         'display_name': 'assignment_part_info_4players',

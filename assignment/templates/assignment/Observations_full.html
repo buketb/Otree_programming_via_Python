@@ -14,22 +14,14 @@ You can read the observations here and chat with the other group members.
 
 <p>
     <p>
-
-
-The player 1 's decision : {{ group.decision_p1 }} <p>
-The player 2 's decision : {{ group.decision_p2 }} <p>
-The player 1 's endowment : {{ group.endowment_p1 }} <p>
-The player 2 's endowment : {{ group.endowment_p2 }} <p>
-
-
 <p>
     <p>
 
-    {% chat %}
+    {% chat channel=group.id %}
 
     <style>
     .otree-chat .messages {
-        height: 600px;
+        height: 300px;
     }
     .otree-chat .nickname {
         color: #0000FF;
@@ -52,52 +44,55 @@ The player 2 's endowment : {{ group.endowment_p2 }} <p>
 
     <tr style="height: 69px;">
         <td style="width: 288.021px; height: 69px;">
-        <p>{{ group.decision_p1 }}</p>
-        <p>{{ group.endowment_p1 }}</p>
+        <p>The 1st household's decision was{{ group.decision_p1 }}</p>
+        <p>The 1st household's endowment was{{ group.endowment_p1 }}</p>
         </td>
         <td style="width: 69.1319px; height: 69px;">&nbsp;</td>
         <td style="width: 264.688px; height: 69px;">
-        <p>{{ group.decision_p2 }}</p>
-        <p>{{ group.endowment_p2 }}</p>
+        <p>The 2nd household's decision was{{ group.decision_p2 }}</p>
+        <p>The 2nd household's endowment was {{ group.endowment_p2 }}</p>
         </td>
     </tr>
-
-    {% if Constants.players_per_group >= 4 %}
+    {% if Constants.players_per_group >= 3 %}
     <tr style="height: 77px;">
-        <td style="width: 288.021px; height: 77px;">{{ group.decision_p3 }}
-        <p>{{ group.endowment_p3}}</p>
-        </td>
+        <td style="width: 288.021px; height: 77px;">The 3rd household's decision was{{ group.decision_p3 }}
+        <p>The 3rd household's endowment was {{ group.endowment_p3}}</p>
+    {% endif %}
+        </td>      {% if Constants.players_per_group >= 4 %}
         <td style="width: 69.1319px; height: 77px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 77px;">&nbsp;{{ group.decision_p4 }}
-        <p>{{ group.endowment_p4 }}</p>
+        <td style="width: 264.688px; height: 77px;">&nbsp;The 4th household's decision was{{ group.decision_p4 }}
+        <p>The 4th household's endowment was {{ group.endowment_p4 }}</p>
         </td>
     </tr>
     {% endif %}
-    
+    {% if Constants.players_per_group >= 5 %}
     <tr style="height: 74px;">
-        <td style="width: 288.021px; height: 74px;">&nbsp;{{ group.decision_p5 }}
-        <p>{{ group.endowment_p5 }}</p>
-        </td>
+        <td style="width: 288.021px; height: 74px;">&nbsp;The 5th household's decision was{{ group.decision_p5 }}
+        <p>The 5th household's endowment was {{ group.endowment_p5 }}</p>
+    {% endif %}
+        </td>     {% if Constants.players_per_group >= 6 %}
         <td style="width: 69.1319px; height: 74px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 74px;">&nbsp;{{ group.decision_p6 }}
-        <p>{{ group.endowment_p6 }}</p>
+        <td style="width: 264.688px; height: 74px;">&nbsp;The 6th household's decision was{{ group.decision_p6 }}
+        <p>The 6th household's endowment was {{ group.endowment_p6 }}</p>
         </td>
     </tr>
-
+    {% endif %}
+    {% if Constants.players_per_group >= 7 %}
     <tr style="height: 72.7083px;">
         <td style="width: 288.021px; height: 72.7083px;">
-        <p>{{ group.decision_p7 }}</p>
-        <p>{{ group.endowment_p7 }}</p>
-        </td>
+        <p>The 7th household's decision was {{ group.decision_p7 }}</p>
+        <p>The 7th household's endowment was {{ group.endowment_p7 }}</p>
+    {% endif %}
+        </td>    {% if Constants.players_per_group >= 8 %}
         <td style="width: 69.1319px; height: 72.7083px;">&nbsp;</td>
         <td style="width: 264.688px; height: 72.7083px;">
-        <p>{{ group.decision_p8 }}</p>
-        <p>{{ group.endowment_p8 }}</p>
+        <p>The 8th household's decision was {{ group.decision_p8 }}</p>
+        <p>The 8th household's endowment was {{ group.endowment_p8 }}</p>
         </td>
     </tr>
 </tbody>
 </table>
-
+    {% endif %}
 
     {% next_button %}
 
