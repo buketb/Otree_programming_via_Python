@@ -6,87 +6,98 @@ from .models import Constants
 from otree.api import SubmissionMustFail
 
 class PlayerBot(Bot):
+    
+
+    def play_round(self):
+        yield(views.Instructions)
+        if self.player.endowment == c(200000):
+            yield(views.NoShockInfo,{"decision":"Default"})
+        else:
+            yield(views.ShockInfo)
+        if self.session.config['treatment'] == 'full_info':
+            yield(views.Observations_full)
+        else:
+            yield(views.Observations_part)
+        yield(views.Demographics, {
+            "age": 25,
+            "gender": "Male",
+            "student_status": "Yes",
+            "field_of_studies": "Economics",
+            "risk_profile": 2,
+            "nationality": "Germany"
+        })
 
     def play_round(self):
 
-        invalid_age_data = {
-            "age": -1,
-            "gender": "Male"
-            "student_status": "True",
-            "field_of_studíes": "Economics",
-            "risk_profile": "Low",
-            "nationality": "Germany"
-        }
-
-        yield SubmissionMustFail(views.Demographics, invalid_age_data)
-
-        invalid_status_data = {
-            "age": 25,
-            "gender": "Male"
-            "student_status": "No",
-            "field_of_studíes": "Economics",
-            "risk_profile": "Low",
-            "nationality": "Germany"
-        }
-
-        yield SubmissionMustFail(views.Demographics, invalid_status_data)
-
-        invalid_status_data = {
-            "age": 25,
-            "gender": "Male"
-            "student_status": "No",
-            "field_of_studies": "Law",
-            "risk_profile": "Low",
-            "nationality": "Canada"
-        }
-
-        yield SubmissionMustFail(views.Demographics, invalid_status_data)
-
-        invalid_status_data = {
-            "age": 27,
-            "gender": "Female"
+        yield(views.Instructions)
+        if self.player.endowment == c(200000):
+            yield(views.NoShockInfo,{"decision":"Default"})
+        else:
+            yield(views.ShockInfo)
+        if self.session.config['treatment'] == 'full_info':
+            yield(views.Observations_full)
+        else:
+            yield(views.Observations_part)
+        yield(views.Demographics, {
+            "age": 35,
+            "gender": "Male",
             "student_status": "Yes",
-            "field_of_studies": "",
-            "risk_profile": "Low",
-            "nationality": "Canada"
-        }
+            "field_of_studies": "Economics",
+            "risk_profile": 6,
+            "nationality": "Turkey"
+        })
 
-        yield SubmissionMustFail(views.Demographics, invalid_status_data)
+    def play_round(self):
 
-        invalid_status_data = {
-            "age": 27,
-            "gender": "Female"
+        yield(views.Instructions)
+        if self.player.endowment == c(200000):
+            yield(views.NoShockInfo,{"decision":"Default"})
+        else:
+            yield(views.ShockInfo)
+        if self.session.config['treatment'] == 'full_info':
+            yield(views.Observations_full)
+        else:
+            yield(views.Observations_part)
+        yield(views.Demographics, {
+            "age": 35,
+            "gender": "Female",
             "student_status": "Yes",
-            "field_of_studies": "qwert",
-            "risk_profile": "Low",
-            "nationality": "Canada"
-        }
+            "field_of_studies": "Philosophy",
+            "risk_profile": 1,
+            "nationality": "Turkey"
+        })
 
-        yield SubmissionMustFail(views.Demographics, invalid_status_data)
+    # def play_round(self):
 
-        invalid_status_data = {
-            "age": 27,
-            "gender": "Female"
-            "student_status": "Yes",
-            "field_of_studies": "asdfghj",
-            "risk_profile": "Low",
-            "nationality": "Canada"
-        }
-
-        yield SubmissionMustFail(views.Demographics, invalid_status_data)
-
-
-        valid_demograhics_data = {
-            "age": 25,
-            "gender": "Male"
-            "student_status": "Yes",
-            "field_of_studíes": "Economics",
-            "risk_profile": "Low",
-            "nationality": "Germany" 
-        }
-        yield (views.Demographics, valid_demograhics_data)
-        assert self.player.age == 25
-        assert self.player.gender == "Male"
-        assert self.player.student_status == "Yes"
-        assert self.player.field_of_studíes == "Economics"
-        assert self.player.nationality == "Germany"
+    #     yield(views.Instructions)
+    #     if self.player.endowment == c(200000):
+    #         yield(views.NoShockInfo,{"decision":"Default"})
+    #     else:
+    #         yield(views.ShockInfo)
+    #     if self.session.config['treatment'] == 'full_info':
+    #         yield(views.Observations_full)
+    #     else:
+    #         yield(views.Observations_part)
+    #     yield SubmissionMustFail(views.Demographics, {
+    #         "age": 35,
+    #         "gender": "Female",
+    #         "student_status": "",
+    #         "field_of_studies": "Economics",
+    #         "risk_profile": 1,
+    #         "nationality": "Turkey"})
+    #     yield SubmissionMustFail(views.Demographics,{
+    #         "age": 35,
+    #         "gender": "Female",
+    #         "student_status": "Yes",
+    #         "field_of_studies": "",
+    #         "risk_profile": 1,
+    #         "nationality": "Turkey"
+    #     }) 
+    #     yield(views.Demographics,{
+    #         "age": 35,
+    #         "gender": "Female",
+    #         "student_status": "Yes",
+    #         "field_of_studies": "Economics",
+    #         "risk_profile": 1,
+    #         "nationality": "Turkey"
+    #         })

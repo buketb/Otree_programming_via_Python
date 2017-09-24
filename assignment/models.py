@@ -14,7 +14,7 @@ Your app description
 
 class Constants(BaseConstants):
     name_in_url = 'assignment'
-    players_per_group = 2
+    players_per_group = 4
     num_rounds = 1
    
     
@@ -127,7 +127,8 @@ class Player(BasePlayer):
 
     student_status= models.BooleanField(
             widget=widgets.CheckboxInput(),
-            verbose_name="Are you a student?",
+            verbose_name="I am a student",
+            blank=True,
             choices=[(True, "Yes"), (False, "No")]
         )
 

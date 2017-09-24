@@ -40,7 +40,7 @@ class WaitPage2(WaitPage):
         self.group.set_other_decisions()
 
 class Observations_full(Page):
-    timeout_second= 120
+    timeout_seconds = 120
 
     def is_displayed(self):
         return self.session.config['treatment'] == 'full_info'
@@ -51,16 +51,19 @@ class Observations_full(Page):
         #else:
         #    return False
 
-    
+
+        #def get_timeout_seconds(self):
+            #return self.session.config['my_page_timeout_seconds']
+
 
 class Observations_part(Page):
-    timeout_second= 120
+    timeout_seconds = 120
 
     def is_displayed(self):
         return self.session.config['treatment'] == 'part_info'
 
-    
 
+    
 class WaitPage3(WaitPage):
 
     def after_all_players_arrive(self):
@@ -69,8 +72,15 @@ class WaitPage3(WaitPage):
 
 class Demographics(Page):
     form_model = models.Player
-    form_fields = ["age", "gender","student_status", "field_of_studies", "risk_profile", "nationality"] # add student_status
+    form_fields = ["age", "gender","student_status", "field_of_studies", "risk_profile", "nationality"]
 
+    def error_message(self, choices):
+        if "student_status"=="No" and "field_of_studies"=="Economics":
+            return "Change the student_status, please!"
+
+    def error_message(self, choices):
+        if "student_status"=="Yes" and "field_of_studies"=="":
+            return "Change the student_status or fill the field_of_studies,please!"
 
 page_sequence = [
     Instructions,

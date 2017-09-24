@@ -179,29 +179,32 @@ SESSION_CONFIGS = [
     
     {
         'name': 'assignment_full_info',
-        'display_name': 'assignment_full_info',
+        'display_name': 'Assignment Full Information Treatment',
         'num_demo_participants': 8,
         'app_sequence': ['assignment'],
         'participation_fee': 3.00,
         'treatment': 'full_info',
+        #'my_page_timeout_seconds': 120,
     }, 
 
     {
         'name': 'assignment_part_info',
-        'display_name': 'assignment_part_info',
+        'display_name': 'Assignment Partial Information Treatment',
         'num_demo_participants': 8,
         'app_sequence': ['assignment'],
         'participation_fee': 3.00,
         'treatment': 'part_info',
+        #'my_page_timeout_seconds': 120,
     },
 
     {
         'name': 'assignment_part_info_4p',
-        'display_name': 'assignment_part_info_4players',
+        'display_name': 'Assignment Partial Information Game With 4 Players',
         'num_demo_participants': 4,
         'app_sequence': ['assignment'],
         'participation_fee': 3.00,
         'treatment': 'part_info',
+        #'my_page_timeout_seconds': 120,
     },
 ]
 

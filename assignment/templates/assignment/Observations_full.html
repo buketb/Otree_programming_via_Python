@@ -3,20 +3,20 @@
 {% load otreechat %}
 
 {% block title %}
-    Strategic Default Observations
+    The Observations and Chat
 
 
 {% endblock %}
 
 {% block content %}
+<p>Welcome to the observtions and chat part! <p>
+<p>You can chat with the other group member(s) on this page. But, it will last for only 120 seconds.
 
-You can read the observations here and chat with the other group members.
 
+<p>Your decision was {{player.decision}}.In order to observe your neighborhood you will find a table below, which is showing the other household's decisions in your neighborhood/group</p>
 <p>
-    <p>
-<p>
-    <p>
-
+<p> 
+<h4><em>The chat box:</em></h4>
     {% chat channel=group.id %}
 
     <style>
@@ -36,7 +36,7 @@ You can read the observations here and chat with the other group members.
 <tbody>
     <tr style="height: 51px;">
         <td style="width: 288.021px; height: 51px;">
-            <p>&nbsp;Different Neighborhoods</p>
+            <p>&nbsp;The Observations of your Neighborhood/Group</p>
         </td>
         <td style="width: 69.1319px; height: 51px;">&nbsp;</td>
         <td style="width: 264.688px; height: 51px;">&nbsp;</td>
@@ -44,50 +44,50 @@ You can read the observations here and chat with the other group members.
 
     <tr style="height: 69px;">
         <td style="width: 288.021px; height: 69px;">
-        <p>The 1st household's decision was{{ group.decision_p1 }}</p>
-        <p>The 1st household's endowment was{{ group.endowment_p1 }}</p>
+        <p>The player 1(the player with ID 1 in your group)'s decision was{{ group.decision_p1 }}</p>
+        <p>The player 1(the player with ID 1 in your group)'s endowment was{{ group.endowment_p1 }}</p>
         </td>
         <td style="width: 69.1319px; height: 69px;">&nbsp;</td>
         <td style="width: 264.688px; height: 69px;">
-        <p>The 2nd household's decision was{{ group.decision_p2 }}</p>
-        <p>The 2nd household's endowment was {{ group.endowment_p2 }}</p>
+        <p>The player 2(the player with ID 2 in your group)'s decision was{{ group.decision_p2 }}</p>
+        <p>The player 2(the player with ID 2 in your group)'s endowment was {{ group.endowment_p2 }}</p>
         </td>
     </tr>
     {% if Constants.players_per_group >= 3 %}
     <tr style="height: 77px;">
-        <td style="width: 288.021px; height: 77px;">The 3rd household's decision was{{ group.decision_p3 }}
-        <p>The 3rd household's endowment was {{ group.endowment_p3}}</p>
+        <td style="width: 288.021px; height: 77px;">The player 3(the player with ID 3 in your group)'s decision was{{ group.decision_p3 }}
+        <p>The player 3(the player with ID 3 in your group)'s endowment was {{ group.endowment_p3}}</p>
     {% endif %}
         </td>      {% if Constants.players_per_group >= 4 %}
         <td style="width: 69.1319px; height: 77px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 77px;">&nbsp;The 4th household's decision was{{ group.decision_p4 }}
-        <p>The 4th household's endowment was {{ group.endowment_p4 }}</p>
+        <td style="width: 264.688px; height: 77px;">&nbsp;The player 4(the player with ID 4 in your group)'s decision was{{ group.decision_p4 }}
+        <p>The player 4(the player with ID 4 in your group)'s endowment was {{ group.endowment_p4 }}</p>
         </td>
     </tr>
     {% endif %}
     {% if Constants.players_per_group >= 5 %}
     <tr style="height: 74px;">
-        <td style="width: 288.021px; height: 74px;">&nbsp;The 5th household's decision was{{ group.decision_p5 }}
-        <p>The 5th household's endowment was {{ group.endowment_p5 }}</p>
+        <td style="width: 288.021px; height: 74px;">&nbsp;The player 5(the player with ID 5 in your group)'s decision was{{ group.decision_p5 }}
+        <p>The player 5(the player with ID 5 in your group)'s endowment was {{ group.endowment_p5 }}</p>
     {% endif %}
         </td>     {% if Constants.players_per_group >= 6 %}
         <td style="width: 69.1319px; height: 74px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 74px;">&nbsp;The 6th household's decision was{{ group.decision_p6 }}
-        <p>The 6th household's endowment was {{ group.endowment_p6 }}</p>
+        <td style="width: 264.688px; height: 74px;">&nbsp;The player 6(the player with ID 6 in your group)'s decision was{{ group.decision_p6 }}
+        <p>The player 6(the player with ID 6 in your group)'s endowment was {{ group.endowment_p6 }}</p>
         </td>
     </tr>
     {% endif %}
     {% if Constants.players_per_group >= 7 %}
     <tr style="height: 72.7083px;">
         <td style="width: 288.021px; height: 72.7083px;">
-        <p>The 7th household's decision was {{ group.decision_p7 }}</p>
-        <p>The 7th household's endowment was {{ group.endowment_p7 }}</p>
+        <p>The player 7(the player with ID 7 in your group)'s decision was {{ group.decision_p7 }}</p>
+        <p>The player 7(the player with ID 7 in your group)'s endowment was {{ group.endowment_p7 }}</p>
     {% endif %}
         </td>    {% if Constants.players_per_group >= 8 %}
         <td style="width: 69.1319px; height: 72.7083px;">&nbsp;</td>
         <td style="width: 264.688px; height: 72.7083px;">
-        <p>The 8th household's decision was {{ group.decision_p8 }}</p>
-        <p>The 8th household's endowment was {{ group.endowment_p8 }}</p>
+        <p>The player 8(the player with ID 8 in your group)'s decision was {{ group.decision_p8 }}</p>
+        <p>The player 8(the player with ID 8 in your group)'s endowment was {{ group.endowment_p8 }}</p>
         </td>
     </tr>
 </tbody>
