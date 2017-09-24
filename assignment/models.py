@@ -128,7 +128,6 @@ class Player(BasePlayer):
     student_status= models.BooleanField(
             widget=widgets.CheckboxInput(),
             verbose_name="I am a student",
-            blank=True,
             choices=[(True, "Yes"), (False, "No")]
         )
 

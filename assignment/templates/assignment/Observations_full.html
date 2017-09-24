@@ -30,69 +30,62 @@
     </style>
 
     <p>
-        <p>
-
-<table style="height: 380px; width: 642px;">
+<table style="height: 386px;" width="709">
 <tbody>
-    <tr style="height: 51px;">
-        <td style="width: 288.021px; height: 51px;">
-            <p>&nbsp;The Observations of your Neighborhood/Group</p>
-        </td>
-        <td style="width: 69.1319px; height: 51px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 51px;">&nbsp;</td>
-    </tr>
-
-    <tr style="height: 69px;">
-        <td style="width: 288.021px; height: 69px;">
-        <p>The player 1(the player with ID 1 in your group)'s decision was{{ group.decision_p1 }}</p>
-        <p>The player 1(the player with ID 1 in your group)'s endowment was{{ group.endowment_p1 }}</p>
-        </td>
-        <td style="width: 69.1319px; height: 69px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 69px;">
-        <p>The player 2(the player with ID 2 in your group)'s decision was{{ group.decision_p2 }}</p>
-        <p>The player 2(the player with ID 2 in your group)'s endowment was {{ group.endowment_p2 }}</p>
-        </td>
-    </tr>
-    {% if Constants.players_per_group >= 3 %}
-    <tr style="height: 77px;">
-        <td style="width: 288.021px; height: 77px;">The player 3(the player with ID 3 in your group)'s decision was{{ group.decision_p3 }}
-        <p>The player 3(the player with ID 3 in your group)'s endowment was {{ group.endowment_p3}}</p>
-    {% endif %}
-        </td>      {% if Constants.players_per_group >= 4 %}
-        <td style="width: 69.1319px; height: 77px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 77px;">&nbsp;The player 4(the player with ID 4 in your group)'s decision was{{ group.decision_p4 }}
-        <p>The player 4(the player with ID 4 in your group)'s endowment was {{ group.endowment_p4 }}</p>
-        </td>
-    </tr>
-    {% endif %}
-    {% if Constants.players_per_group >= 5 %}
-    <tr style="height: 74px;">
-        <td style="width: 288.021px; height: 74px;">&nbsp;The player 5(the player with ID 5 in your group)'s decision was{{ group.decision_p5 }}
-        <p>The player 5(the player with ID 5 in your group)'s endowment was {{ group.endowment_p5 }}</p>
-    {% endif %}
-        </td>     {% if Constants.players_per_group >= 6 %}
-        <td style="width: 69.1319px; height: 74px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 74px;">&nbsp;The player 6(the player with ID 6 in your group)'s decision was{{ group.decision_p6 }}
-        <p>The player 6(the player with ID 6 in your group)'s endowment was {{ group.endowment_p6 }}</p>
-        </td>
-    </tr>
-    {% endif %}
-    {% if Constants.players_per_group >= 7 %}
-    <tr style="height: 72.7083px;">
-        <td style="width: 288.021px; height: 72.7083px;">
-        <p>The player 7(the player with ID 7 in your group)'s decision was {{ group.decision_p7 }}</p>
-        <p>The player 7(the player with ID 7 in your group)'s endowment was {{ group.endowment_p7 }}</p>
-    {% endif %}
-        </td>    {% if Constants.players_per_group >= 8 %}
-        <td style="width: 69.1319px; height: 72.7083px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 72.7083px;">
-        <p>The player 8(the player with ID 8 in your group)'s decision was {{ group.decision_p8 }}</p>
-        <p>The player 8(the player with ID 8 in your group)'s endowment was {{ group.endowment_p8 }}</p>
-        </td>
-    </tr>
+<tr>
+    <td style="width: 346.91px;">
+    <p>The player 1 (the player with ID 1 in your group)'s decision was {{ group.decision_p1 }}</p>
+    <p><br/> The player 1 (the player with ID 1 in your group)'s endowment was {{ group.endowment_p1 }}</p>
+    </td>
+    <td style="width: 348.021px;">
+    <p>The player 2 (the player with ID 2 in your group)'s decision was {{ group.decision_p2 }}</p>
+    <p><br />The player 2 (the player with ID 2 in your group)'s endowment was {{ group.endowment_p2 }}</p>
+    </td>
+</tr>
+<tr>
+    <td style="width: 346.91px;">
+    <p>{% if Constants.players_per_group >= 3 %}</p>
+    <p>The player 3 (the player with ID 3 in your group)'s decision was {{ group.decision_p3 }}</p>
+    <p><br />The player 3 (the player with ID 3 in your group)'s endowment was {{ group.endowment_p3 }}</p>
+    <p>{% endif %}</p>
+    </td>
+    <td style="width: 348.021px;">
+    <p>{% if Constants.players_per_group >= 4 %}</p>
+    <p>The player 4 (the player with ID 4 in your group)'s decision was {{ group.decision_p4 }}</p>
+    <p><br />The player 4 (the player with ID 4 in your group)'s endowment was {{ group.endowment_p4 }}</p>
+    <p>{% endif %}</p>
+    </td>
+</tr>
+<tr>
+    <td style="width: 346.91px;">
+    <p>{% if Constants.players_per_group >= 5 %}</p>
+    <p>The player 5 (the player with ID 5 in your group)'s decision was {{ group.decision_p5 }}</p>
+    <p><br />The player 5 (the player with ID 5 in your group)'s endowment was {{ group.endowment_p5 }}</p>
+    <p>{% endif %}</p>
+    </td>
+    <td style="width: 348.021px;">
+    <p>{% if Constants.players_per_group >= 6 %}</p>
+    <p>The player 6 (the player with ID 6 in your group)'s decision was {{ group.decision_p6 }}</p>
+    <p><br />The player 6 (the player with ID 6 in your group)'s endowment was {{ group.endowment_p6 }}</p>
+    <p>{% endif %}</p>
+    </td>
+</tr>
+<tr>
+    <td style="width: 346.91px;">
+    <p>{% if Constants.players_per_group >= 7 %}</p>
+    <p>The player 7 (the player with ID 7 in your group)'s decision was {{ group.decision_p7 }}</p>
+    <p><br />The player 7 (the player with ID 7 in your group)'s endowment was {{ group.endowment_p7 }}</p>
+    <p>{% endif %}</p>
+    </td>
+    <td style="width: 348.021px;">
+    <p>{% if Constants.players_per_group >= 8 %}</p>
+    <p>The player 8 (the player with ID 8 in your group)'s decision was {{ group.decision_p8 }} </p>
+    <p><br />The player 8 (the player with ID 8 in your group)'s endowment was {{ group.endowment_p8 }}</p>
+    <p>{% endif %}</p>
+    </td>
+</tr>
 </tbody>
 </table>
-    {% endif %}
 
     {% next_button %}
 

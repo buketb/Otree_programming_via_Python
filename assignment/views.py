@@ -74,13 +74,6 @@ class Demographics(Page):
     form_model = models.Player
     form_fields = ["age", "gender","student_status", "field_of_studies", "risk_profile", "nationality"]
 
-    def error_message(self, choices):
-        if "student_status"=="No" and "field_of_studies"=="Economics":
-            return "Change the student_status, please!"
-
-    def error_message(self, choices):
-        if "student_status"=="Yes" and "field_of_studies"=="":
-            return "Change the student_status or fill the field_of_studies,please!"
 
 page_sequence = [
     Instructions,

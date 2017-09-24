@@ -13,7 +13,7 @@
 <p>You can chat with the other group member(s) on this page. But, it will last for only 120 seconds.</p>
 
 
-<p>Your decision was {{player.decision}}.In order to observe your neighborhood you will find a table below, which is showing the other household's decisions in your neighborhood/group</p>
+<p>Your decision was {{ player.decision }}. In order to observe your neighborhood you will find a table below, which is showing the other household's decisions in your neighborhood/group</p>
  <h4><em>The chat box:</em></h4>
  <p>  
 <p>{% chat channel=group.id %}
@@ -27,65 +27,65 @@
         font-weight: bold;
     }
     </style></p>
-<table style="height: 380px; width: 642px;"></table></p>
+
+<table style="height: 386px;" width="709">
 <tbody>
-    <tr style="height: 51px;">
-        <td style="width: 288.021px; height: 51px;">
-            <p>&nbsp;The Observations of your Neighborhood/Group </p>
-        </td>
-        <td style="width: 69.1319px; height: 51px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 51px;">&nbsp;</td>
-    </tr>
-
-    <tr style="height: 69px;">
-        <td style="width: 288.021px; height: 69px;">
-        <p>The player 1(the player with ID 1 in your group)'s decision was {{ group.decision_p1 }}</p>
-        </td>
-        <td style="width: 69.1319px; height: 69px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 69px;">
-        <p>The player 2(the player with ID 2 in your group)'s decision was {{ group.decision_p2 }}</p>
-        </td>
-    </tr>
-
-    {% if Constants.players_per_group >= 3 %}
-    <tr style="height: 77px;">
-        <td style="width: 288.021px; height: 77px;">The player 3(the player with ID 3 in your group)'s decision was {{ group.decision_p3 }}
-    {% endif %}
-    {% if Constants.players_per_group >= 4 %}
-        </td>  
-        <td style="width: 69.1319px; height: 77px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 77px;">&nbsp;The player 4(the player with ID 4 in your group)'s decision was {{ group.decision_p4 }}
-        </td>
-    </tr>
-    {% endif %}
-    {% if Constants.players_per_group >= 5 %}
-    
-    <tr style="height: 74px;">
-        <td style="width: 288.021px; height: 74px;">&nbsp;The player 5(the player with ID 5 in your group)'s decision was {{ group.decision_p5 }}
-    {% endif %}
-    {% if Constants.players_per_group >= 6 %}
-        </td> 
-        <td style="width: 69.1319px; height: 74px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 74px;">&nbsp;The player 6(the player with ID 6 in your group)'s decision was {{ group.decision_p6 }}
-        </td>
-    </tr>
-    {% endif %}
-    {% if Constants.players_per_group >= 7 %}
-    <tr style="height: 72.7083px;">
-        <td style="width: 288.021px; height: 72.7083px;">
-        <p>The player 7(the player with ID 7 in your group)'s decision was {{ group.decision_p7 }}</p>
-    {% endif %}
-    {% if Constants.players_per_group >= 8 %}
-        </td>    
-        <td style="width: 69.1319px; height: 72.7083px;">&nbsp;</td>
-        <td style="width: 264.688px; height: 72.7083px;">
-        <p>The player 8(the player with ID 8 in your group)'s decision was {{ group.decision_p8 }}</p>
-        </td>
-    </tr>
+<tr>
+<td style="width: 346.91px;">
+<p> The player 1 (the player with ID 1 in your group)'s</p> <p> decision was {{ group.decision_p1 }} </p>
+<p><br /></p>
+</td>
+<td style="width: 348.021px;">
+<p> The player 2 (the player with ID 2 in your group)'s</p> <p> decision was {{ group.decision_p2 }} </p>
+<p><br /></p>
+</td>
+</tr>
+<tr>
+<td style="width: 346.91px;">
+<p> {% if Constants.players_per_group >= 3 %} </p>
+<p> The player 3 (the player with ID 3 in your group)'s</p> <p> decision was {{ group.decision_p3 }} </p>
+<p><br /></p>
+<p> {% endif %} </p>
+</td>
+<td style="width: 348.021px;">
+<p> {% if Constants.players_per_group >= 4 %} </p>
+<p> The player 4 (the player with ID 4 in your group)'s</p> <p> decision was {{ group.decision_p4 }} </p>
+<p><br /></p>
+<p> {% endif %} </p>
+</td>
+</tr>
+<tr>
+<td style="width: 346.91px;">
+<p>{% if Constants.players_per_group >= 5 %}</p>
+<p>The player 5 (the player with ID 5 in your group)'s</p> <p> decision was {{ group.decision_p5 }}</p>
+<p><br /></p>
+<p>{% endif %}</p>
+</td>
+<td style="width: 348.021px;">
+<p>{% if Constants.players_per_group >= 6 %}</p>
+<p>The player 6 (the player with ID 6 in your group)'s</p> <p> decision was {{ group.decision_p6 }}</p>
+<p><br /></p>
+<p>{% endif %}</p>
+</td>
+</tr>
+<tr>
+<td style="width: 346.91px;">
+<p>{% if Constants.players_per_group >= 7 %}</p>
+<p>The player 7 (the player with ID 7 in your group)'s</p> <p> decision was {{ group.decision_p7 }}</p>
+<p><br /></p>
+<p>{% endif %}</p>
+</td>
+<td style="width: 348.021px;">
+<p>{% if Constants.players_per_group >= 8 %}</p>
+<p>The player 8 (the player with ID 8 in your group)'s</p> <p> decision was {{ group.decision_p8 }}</p>
+<p><br /></p>
+<p>{% endif %}</p>
+</td>
+</tr>
 </tbody>
 </table>
 <p>
-    {% endif %}
+  
 
     
     {% next_button %}
