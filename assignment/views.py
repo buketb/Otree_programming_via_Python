@@ -39,6 +39,9 @@ class WaitPage2(WaitPage):
     def after_all_players_arrive(self):
         self.group.set_other_decisions()
 
+class AllGroupsWaitPage(WaitPage):
+    wait_for_all_groups = True
+
 class Observations_full(Page):
     timeout_seconds = 120
 
@@ -54,7 +57,13 @@ class Observations_full(Page):
 
         #def get_timeout_seconds(self):
             #return self.session.config['my_page_timeout_seconds']
+class WaitPage25(WaitPage):
 
+    def after_all_players_arrive(self):
+        self.group.set_other_decisions()
+
+class AllGroupsWaitPage2(WaitPage):
+    wait_for_all_groups = True
 
 class Observations_part(Page):
     timeout_seconds = 120
@@ -81,7 +90,10 @@ page_sequence = [
     NoShockInfo,
     ShockInfo,
     WaitPage2,
+    AllGroupsWaitPage,
     Observations_full,
+    WaitPage25,
+    AllGroupsWaitPage2,
     Observations_part,
     WaitPage3,
     Demographics,
